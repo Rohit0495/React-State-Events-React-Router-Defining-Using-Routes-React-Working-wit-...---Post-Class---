@@ -1,18 +1,13 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom';
-import { AppRoutes } from '../AppRoutes';
+import React,{useState} from 'react'
 import '../styles/App.css';
-import { NavBar } from './NavBar';
 const App = () => {
-
+  const [flag, setFlag] = useState(true);
+  
   return (
-    <BrowserRouter>
-      <div id="main">
-        <NavBar />
-        <AppRoutes />
-      </div>
-    </BrowserRouter>
-
+    <div id="main">
+     <h1 id="marco-polo">{flag ? "Marco" : "Polo"}</h1>
+     <button id="marco-polo-toggler" onClick={setFlag(!flag)}>{flag ? "Polo" : "Marco"}</button>
+    </div>
   )
 }
 
